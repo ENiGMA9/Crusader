@@ -9,6 +9,10 @@ You have to give each thread the task to hash a word and check if it matches, do
 
 After the generating and the hashing, each thread compares it's hash to the list of input hashes, I'm aware this is not so efficient and is a critical area to improve, I believe by processing the input hash list I can cut more corners.
 
+# How to build
+You need to have CUDA Toolkit installed, I developed this using CUDA 7.5 and it is not tested with newer versions (like 8.0). It's also developed using Visual Studio 2013 because the version of Nsight coming with 7.5 wasn't pairing well with 2015 either. Right now, vs2015 is officially supported in CUDA Toolkit 8.0.
+
+Apart from that everything should be set, including custom post-build events.
 
 # TO DO features - in order of priority:
 - **Multi-threading:** I ran a dev build with multithreading and there were some inconsistencies, but it's definitely coming, while bruting works there is some overhead on the CPU;
