@@ -65,7 +65,6 @@ int alphabet_size;							// A value that should store the alphabet size which us
 
 inline cudaError_t CudaBrute(
         unsigned int *return_array,
-        unsigned int *seed_word,
         unsigned int *stop_flag_end_of_bruting,
         unsigned int *last_bruted_word_size,
         unsigned int *new_word_seed,
@@ -211,7 +210,7 @@ int main()
     PropertyManager::registerProperty("BLOCKS", BLOCKS);
     PropertyManager::registerProperty("THREADS", THREADS);
 	PropertyManager::registerProperty("SAVE_CYCLES_COUNT", SAVE_CYCLES_COUNT);
-    PropertyManager::parse();					// The parse function actually starts the .cfg reading, until then nothing happens, because of this design, it's possible to implement .cfg hotswap
+   // PropertyManager::parse();					// The parse function actually starts the .cfg reading, until then nothing happens, because of this design, it's possible to implement .cfg hotswap
 
     WORD_BUFFER_SIZE = MAX_WORD_SIZE + 1;		// Since we read from config we need to update the buffer_size, if hotswap is to be implemented, this needs to go in parse(), maybe have a registerRelation() function
     THREADSCOUNT = BLOCKS*THREADS;				// Same as buffer
@@ -445,7 +444,7 @@ int main()
 
 
 	//LEGACY CODE  delete[] cpu_word_seed;
-	SaveManager::cleanup();
+	//SaveManager::cleanup();
     delete[] cuda_results;
     delete stop_flag_end_of_bruting;
     delete last_bruted_word_size;

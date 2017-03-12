@@ -76,24 +76,30 @@ void PropertyManager::registerProperty(const char *property_name, int &variable_
 
 void PropertyManager::loadCfg(char* cfgname) {
 	std::ifstream input_file(cfgname);
-	std::string input_buffer;
-	std::string variable_name;
-	std::string variable_value;
-	while (std::getline(input_file, input_buffer))
-	{
-		if (input_buffer.find("#")==std::string::npos) {
-			variable_name = input_buffer.substr(0, input_buffer.find("="));
-			variable_value = input_buffer.substr(input_buffer.find("=") + 1, input_buffer.length());
-			const char* aux_char = variable_name.c_str();
-			Property *temp_property = PropertyManager::findPropertyByName(aux_char);
-			if (temp_property)
-			{
-				temp_property->setPropertyValue(atoi(variable_value.c_str()));
+	if (input_file){
+		std::string input_buffer;
+		std::string variable_name;
+		std::string variable_value;
+		while (std::getline(input_file, input_buffer))
+		{
+			if (input_buffer.find("#") == std::string::npos) {
+				variable_name = input_buffer.substr(0, input_buffer.find("="));
+				variable_value = input_buffer.substr(input_buffer.find("=") + 1, input_buffer.length());
+				const char* aux_char = variable_name.c_str();
+				Property *temp_property = PropertyManager::findPropertyByName(aux_char);
+				if (temp_property)
+				{
+					temp_property->setPropertyValue(atoi(variable_value.c_str()));
+				}
 			}
 		}
-	}
 
-	input_file.close();
+		input_file.close();
+	}
+	else
+	{
+		throw "cfg unusable";
+	}
 }
 
 

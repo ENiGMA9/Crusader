@@ -10,13 +10,13 @@
 #ifndef SAVE_MANAGER_CPP
 #define SAVE_MANAGER_CPP
 
-void SaveManager::load(char* filename, int alphabetSize = 0){
+void SaveManager::load(const char* filename, int alphabetSize){
 	valid = 1;
 	unsigned int buffer;
 	int counter = 0;
 
 	std::ifstream savefile(filename);
-	if (savefile.bad)
+	if (!savefile)
 	{
 		throw "Savefile not found or in use";
 	}
@@ -53,7 +53,7 @@ void SaveManager::load(char* filename, int alphabetSize = 0){
 	savefile.close();
 }
 
-void SaveManager::save(char* filename){
+void SaveManager::save(const char* filename){
 
 }
 

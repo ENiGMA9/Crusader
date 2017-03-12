@@ -168,7 +168,13 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     </Link>
     <PostBuildEvent>
       <Command>echo copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
-copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
+copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"
+echo copy "$(SolutionDir)\Crusader\config.cfg" "$(OutDir)"
+copy "$(SolutionDir)\Crusader\config.cfg" "$(OutDir)"
+echo copy "$(SolutionDir)\Crusader\alphabet.txt" "$(OutDir)"
+copy "$(SolutionDir)\Crusader\alphabet.txt" "$(OutDir)"
+echo copy "$(SolutionDir)\Crusader\hashes.txt" "$(OutDir)"
+copy "$(SolutionDir)\Crusader\hashes.txt" "$(OutDir)"</Command>
     </PostBuildEvent>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
