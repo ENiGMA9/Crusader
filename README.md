@@ -15,6 +15,7 @@ You need to have CUDA Toolkit installed, I developed this using CUDA 7.5 and it 
 Apart from that everything should be set, including custom post-build events.
 
 # TO DO features - in order of priority:
+- **Refactor:** This is a new task, I need to do a big refactor, change some logic, upgrade to CUDA 8.0 and use C++11
 - **Multi-threading:** I ran a dev build with multithreading and there were some inconsistencies, but it's definitely coming, while bruting works there is some overhead on the CPU;
 - **Benchmark tool:** User will be able to run this and find out the differences both in seconds and in percents between CPU run and multiple different configurations for GPU;
 - **Auto-load balancing:** Will make use of some logic from the benchmark tool to automatically find the optimum parameters for bruting, it will be toggle-able from the config;
