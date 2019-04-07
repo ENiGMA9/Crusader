@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <None Include="config.cfg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="alphabet.txt" />
-    <Text Include="hashes.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PropertyManager\Properties.h">
-      <Filter>PropertyManager</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertyManager\PropertyManager.h">
-      <Filter>PropertyManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Resources\resource.h">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="SaveManager.h">
-      <Filter>SaveManager</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="PropertyManager">
       <UniqueIdentifier>{636b7a57-09b1-47dd-b61e-b387fce641a8}</UniqueIdentifier>
     </Filter>
@@ -33,15 +12,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PropertyManager\Properties.cpp">
+    <ClInclude Include="PropertyManager\Properties.h">
       <Filter>PropertyManager</Filter>
-    </ClCompile>
+    </ClInclude>
+    <ClInclude Include="PropertyManager\PropertyManager.h">
+      <Filter>PropertyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources\resource1.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveManager.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="PropertyManager\PropertyManager.cpp">
       <Filter>PropertyManager</Filter>
     </ClCompile>
-    <ClCompile Include="SaveManager.cpp">
-      <Filter>SaveManager</Filter>
+    <ClCompile Include="PropertyManager\Properties.cpp">
+      <Filter>PropertyManager</Filter>
     </ClCompile>
+    <ClCompile Include="SaveManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources\Crusader.rc">
@@ -52,6 +44,13 @@
     <Image Include="Resources\mace-head.ico">
       <Filter>Resources</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="alphabet.txt" />
+    <Text Include="hashes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.cfg" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="Main.cu" />
