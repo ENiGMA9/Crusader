@@ -1,3 +1,7 @@
+# --Update--
+This software remains right now as a memory. In hindsight, the decision to rename everything to be explicit and comment everything was not really a good idea, the current project runs but it is so far from good practices, or efficiency or anything. This project is not feasible since bruting time increases exponentially, and you get a lot of false positives / clashes, it did serve it's purspose at the time.
+
+
 # Work in progress disclaimer
 At this time, this software is not in it's *"Release"* state. There is unused code in the source, code that misbehaves, and known glitches. Progress will now be submitted here and will be visible in the Commits section as I'm actively working on it when I get the time. Right now, the software compiles but it's not guaranteed to run correctly because it's in a state of transition. I began replacing procedural code that's CPU bound with Object Oriented Code and didn't finish it, there may be bits that misbehave left and there are incomplete utility classes. You are free to tamper with it though.
 
@@ -13,6 +17,7 @@ After the generating and the hashing, each thread compares it's hash to the list
 You need to have CUDA Toolkit installed, I developed this using CUDA 7.5 and it is not tested with newer versions (like 8.0). It's also developed using Visual Studio 2013 because the version of Nsight coming with 7.5 wasn't pairing well with 2015 either. Right now, vs2015 is officially supported in CUDA Toolkit 8.0.
 
 Apart from that everything should be set, including custom post-build events.
+EDIT: You may need to do some relinking, I'm still looking into this.
 
 # TO DO features - in order of priority:
 - **Rewrite**
